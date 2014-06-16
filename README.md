@@ -1,13 +1,13 @@
 # Jenkins Hardening
 
-This cookbook aims to provide a default jenkins setup that is secure. Specificly it 
+This cookbook aims to provide a default jenkins setup that is secure. Specifically it 
 
 - installs jenkins behind nginx
 - configures ssl for nginx
 - configures user logins
-- run jenkins slaves on different servers
+- runs jenkins slaves on different servers
 
-Currently this cookbook is work-in-progress.
+Currently this cookbook is work-in-progress and is not yet considered secure enough for production use.
 
 # Usage
 
