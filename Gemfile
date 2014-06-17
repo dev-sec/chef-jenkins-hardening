@@ -19,3 +19,12 @@ group :development do
   gem 'guard-foodcritic'
 end
 
+group :integration do
+  gem 'test-kitchen', '~> 1.0'
+  gem 'kitchen-vagrant'
+  gem 'kitchen-sharedtests', '~> 0.2.0'
+end
+
+group :openstack do
+  gem 'kitchen-openstack'
+end
