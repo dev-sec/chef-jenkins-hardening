@@ -1,0 +1,10 @@
+source "https://supermarket.getchef.com"
+
+cookbook "chef-solo-search", git: "https://github.com/edelight/chef-solo-search"
+cookbook "apt"
+cookbook "ntp"
+cookbook "os-hardening"
+cookbook "ssh-hardening"
+cookbook "nginx"
+cookbook "java"
+cookbook 'jenkins-hardening', path: '../'

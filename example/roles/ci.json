@@ -1,0 +1,54 @@
+{
+  "name": "ci",
+  "description": "Jenkins CI Server",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+    "authorization": {
+      "sudo": {
+        "groups": ["admin", "wheel", "sysadmin"],
+        "users": ["jenkins"],
+        "passwordless": "true"
+      }
+    },
+    "nginx": {
+      "socketproxy": {
+        "default_app": "default",
+        "apps": {
+          "default": {
+            "prepend_slash": false,
+            "context_name": "",
+            "subdir": "current",
+            "socket": {
+              "type": "tcp",
+              "port": "8080"
+            }
+          }
+        }
+      }
+    },
+    "jenkins": {
+      "master": {
+        "port": 8080
+      }
+    },
+    "java" : {
+      "install_flavor" : "oracle",
+      "jdk_version" : "7",
+      "oracle" : {
+        "accept_oracle_download_terms" : true
+      }
+    }
+  },
+  "override_attributes": {},
+  "run_list": [
+    "recipe[apt]",
+    "recipe[chef-solo-search]",
+    "recipe[ntp]",
+    "recipe[os-hardening]",
+    "recipe[ssh-hardening]",
+    "recipe[nginx]",
+    "recipe[java]",
+    "recipe[jenkins-hardening]"
+  ]
+}
