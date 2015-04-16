@@ -1,7 +1,7 @@
 # encoding: utf-8
 #
 # Cookbook Name:: jenkins-hardening
-# Recipe:: default
+# Attribute:: proxy
 #
 # Copyright 2014, Christoph Hartmann
 #
@@ -17,5 +17,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe 'jenkins-hardening::jenkins'
-include_recipe 'jenkins-hardening::proxy'
+# override nginx defaults
+override['nginx']['default_site_enabled']   = false
+
+# remove version information
+override['nginx']['server_tokens']          = 'off'
+
+# overwrite buffer size
+override['nginx']['client_body_buffer_size'] = '1K'
+override['nginx']['client_max_body_size']    = '1K'
+
+# overwrite timeouts
+override['nginx']['keepalive_timeout']    = 55

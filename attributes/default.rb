@@ -1,7 +1,7 @@
 # encoding: utf-8
 #
 # Cookbook Name:: jenkins-hardening
-# Recipe:: default
+# Attribute:: default
 #
 # Copyright 2014, Christoph Hartmann
 #
@@ -22,7 +22,6 @@ default['hardening']['jenkins'].tap do |master|
   #
   # Default plugins for jenkins
   #
-  master['plugins'] = %w(git-client git github-api github
-                         chucknorris simple-theme-plugin jquery rvm)
+  master['plugins'] = %w(ant build-timeout credentials git-client git github-api github jquery matrix-auth maven-plugin metrics rvm simple-theme-plugin swarm windows-slaves)
 
 end
