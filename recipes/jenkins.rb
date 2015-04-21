@@ -22,5 +22,5 @@ include_recipe 'jenkins::master'
 
 # install jenkins plugins
 node['hardening']['jenkins']['plugins'].each do |plugin|
-  jenkins_plugin "#{plugin}"
+  jenkins_plugin plugin
 end

@@ -21,23 +21,23 @@
 include_recipe 'nginx::default'
 
 # Install ssl certificate
-ssl = data_bag_item("jenkins", "ssl")
+ssl = data_bag_item('jenkins', 'ssl')
 
 file "#{node['nginx']['dir']}/conf.d/jenkins.cert" do
-  content ssl["client"]["cert"]
+  content ssl['client']['cert']
   mode 0644
 end
 
 file "#{node['nginx']['dir']}/conf.d/jenkins.key" do
-  content ssl["client"]["key"]
+  content ssl['client']['key']
   mode 0600
 end
 
 # update nginx
 template "#{node['nginx']['dir']}/conf.d/jenkins.conf" do
   source 'jenkins-site.erb'
-  owner  'root'
-  group  node['root_group']
-  mode   '0644'
+  owner 'root'
+  group node['root_group']
+  mode '0644'
   notifies :reload, 'service[nginx]'
 end

@@ -1,1 +1,9 @@
+README.pdf
+README.html
+shared_test_repo/
+test/integration
 .kitchen
+coverage
+
+Gemfile.lock
+Berksfile.lock
