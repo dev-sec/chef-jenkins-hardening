@@ -16,9 +16,8 @@ server {
   add_header Strict-Transport-Security max-age=15768000; # six months
 
   # ssl certificate
-  ssl_certificate /usr/local/nginx/conf.d/jenkins.cert;
-  ssl_certificate_key /usr/local/nginx/conf.d/jenkins.key;
-
+  ssl_certificate <%= node['nginx']['dir'] %>/conf.d/jenkins.cert;
+  ssl_certificate_key <%= node['nginx']['dir'] %>/conf.d/jenkins.key;
 
   location / {
     proxy_pass http://internal_cluster_jenkins;
