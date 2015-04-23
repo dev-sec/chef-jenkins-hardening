@@ -1,6 +1,6 @@
 # Jenkins Hardening
 
-This cookbook aims to provide a default jenkins setup that is secure. Specifically it 
+This cookbook aims to provide a default jenkins setup that is secure. Specifically it
 
 - installs jenkins behind nginx
 - configures ssl for nginx
@@ -11,7 +11,7 @@ Currently this cookbook is work-in-progress and is not yet considered secure eno
 
 ## Default Plugins
 
-Default Plugins can be overridden by 
+Default Plugins can be overridden by
 
 default['hardening']['jenkins']['plugins']
 
@@ -54,7 +54,7 @@ bundle exec rake lint
 
 # Kitchen test
 bundle exec kitchen list
-bundle exec kitchen test default-ubuntu-1204 
+bundle exec kitchen test default-ubuntu-1204
 
 ```
 
@@ -69,6 +69,7 @@ See [contributor guideline](CONTRIBUTING.md).
 ## License and Author
 
 * Author:: Christoph Hartmann <chris@lollyrock.com>
+* Author:: Trent Petersen <trent.petersen@convergint.com>
 * Author:: Deutsche Telekom AG
 
 Licensed under the Apache License, Version 2.0 (the "License");
