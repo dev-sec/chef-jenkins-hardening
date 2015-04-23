@@ -20,9 +20,7 @@ describe 'jenkins-hardening::default' do
 
   # converge
   cached(:chef_run) do
-    ChefSpec::SoloRunner.new do |node|
-      node.automatic['root_group'] = 'root'
-    end.converge(described_recipe)
+    ChefSpec::SoloRunner.converge(described_recipe)
   end
 
   before do
