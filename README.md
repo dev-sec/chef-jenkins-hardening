@@ -1,5 +1,7 @@
 # Jenkins Hardening
 
+This project is DEPRECATED and NO LONGER SUPPORTED. If you think this should really be supported, [reach out](https://dev-sec.io/community/) and we can discuss options.
+
 This cookbook aims to provide a default jenkins setup that is secure. Specifically it
 
 - installs jenkins behind nginx
